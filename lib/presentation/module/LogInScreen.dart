@@ -17,7 +17,7 @@ class LogInScreen extends StatelessWidget {
       ListView(
 
             children: [
-              SizedBox(height: 20.h,),
+              SizedBox(height: 15.h,),
               TextField1(secure: false,name:'User',hint: 'User',type: TextInputType.emailAddress,controller:controller1),
               TextField1(type:TextInputType.visiblePassword,name: 'Pass',secure: true,hint: 'Password',controller:controller2,),
               InkWell(
