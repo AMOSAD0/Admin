@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-class TextFieldF extends StatelessWidget {
+class TextField1 extends StatelessWidget {
   TextEditingController? controller=TextEditingController();
   String? hint,name;
   bool? secure;
   var type;
-  TextFieldF({Key? key,this.hint,this.name,this.secure,this.type,this.controller}) : super(key: key);
+  TextField1({Key? key,this.hint,this.name,this.secure,this.type,this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return
       Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(4.0),
         child: Container(
           height: 20.h,
           width: 85.w,
