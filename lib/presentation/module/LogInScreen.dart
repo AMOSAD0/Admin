@@ -1,18 +1,32 @@
+import 'package:admin/presentation/module/AddProductScreen.dart';
+import 'package:admin/presentation/widget/Button.dart';
+import 'package:admin/presentation/widget/TextField.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 class LogInScreen extends StatelessWidget {
-  const LogInScreen({Key? key}) : super(key: key);
+  TextEditingController controller1=TextEditingController();
+  TextEditingController controller2=TextEditingController();
+  String? user,pass;
+
+   LogInScreen({Key? key, this.user,this.pass}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-        height: 50.h,
-          width: 90.w,
-          color: Colors.black,
-        ),
-      ),
+      body:
+      ListView(
+
+            children: [
+              SizedBox(height: 20.h,),
+              TextFieldF(secure: false,name:'User',hint: 'User',type: TextInputType.emailAddress,controller:controller1),
+              TextFieldF(type:TextInputType.visiblePassword,name: 'Pass',secure: true,hint: 'Password',controller:controller2,),
+              InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>AddProductScreen()));
+                  },
+                  child: Btton(btn: 'LogIn',))
+            ],
+          ),
     );
   }
 }
