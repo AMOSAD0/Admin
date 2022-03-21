@@ -1,3 +1,4 @@
+import 'package:admin/data/api/productApi.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Cubit.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Stat.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,8 @@ class AddProductScreen extends StatelessWidget {
            padding: const EdgeInsets.all(50.0),
            child: InkWell(
              onTap: (){
-         print(ProductCubit.get(context).P_List[0].id);
+              // ProductCubit().getAll();
+         print(ProductCubit.get(context).P_List);
             
              },
              child: Container(
