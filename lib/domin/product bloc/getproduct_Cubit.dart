@@ -1,3 +1,4 @@
+import 'package:admin/data/api/productApi.dart';
 import 'package:admin/data/model/product.dart';
 import 'package:admin/data/repo/productRepo.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Stat.dart';
@@ -11,11 +12,13 @@ class ProductCubit extends Cubit<productStats>
  List<product>P_List=[];
 
  getAll(){
-   productRepo p= productRepo(P_List);
-   p.getProd().then((value){
+   productApi p= productApi(P_List);
+   p.getProudcts();
+ //P_List=  p.getProudcts();
+ /*.then((value){
      P_List=value;
      emit(Succes());
-   });
+   });*/
  }
 
 }

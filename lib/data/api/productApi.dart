@@ -3,14 +3,22 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 class productApi{
-QuerySnapshot<Map<String,dynamic>>? Val;
+//var Val;
+List<product> products=[];
+productApi(this.products);
   
   getProudcts()async{
     await FirebaseFirestore.instance.collection('Products').get().then((value) {
-      Val=value;
+     value.docs.forEach((element) { 
+       product p = product.fromJson(element.data());
+       p.id=element.id;
+    //p.Name=element.Name;
+    //p.Price=element.Price;
+        products.add(p);
+     });
     }).catchError((onError){
       print(onError);
     });
-    return Val;
+    return products;
   }
 }
