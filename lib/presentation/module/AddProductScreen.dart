@@ -18,8 +18,8 @@ class AddProductScreen extends StatelessWidget {
            padding: const EdgeInsets.all(50.0),
            child: InkWell(
              onTap: (){
-            ProductCubit().getAll();
-            print(p);
+         print(ProductCubit.get(context).P_List[0].id);
+            
              },
              child: Container(
               height: 20.h,
