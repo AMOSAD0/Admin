@@ -17,10 +17,10 @@ productApi(this.products);
         products.add(p);
      }
      );
-     
+     return products;
     }).catchError((onError){
       print(onError);
     });
-    return products;
+    
   }
 }

@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 
-class Products extends StatelessWidget {
-  const Products({ Key? key }) : super(key: key);
+class ProductScreen extends StatelessWidget {
+  const ProductScreen({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+      body: Center(
+        child: Container(
+          height: 50.h,
+          width: 80.w,
+          color: Colors.black,
+        ),
+      ),
       
     );
   }
