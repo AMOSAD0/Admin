@@ -1,3 +1,4 @@
+import 'package:admin/constant/Screens.dart';
 import 'package:admin/data/api/productApi.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Cubit.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Stat.dart';
@@ -10,17 +11,16 @@ class AddProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductCubit,productStats>(
-      builder: (context, state) {
-       return    Scaffold(  body: Column(
+    return Scaffold(  body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
          Padding(
            padding: const EdgeInsets.all(50.0),
            child: InkWell(
              onTap: (){
+             Navigator.pushNamed(context, productpath);
               // ProductCubit().getAll();
-         print(ProductCubit.get(context).P_List);
+  //  print(ProductCubit.get(context).P_List);
             
              },
              child: Container(
@@ -59,8 +59,8 @@ class AddProductScreen extends StatelessWidget {
          ),
         ],
       ),
+      
       );
-      });
     
     
   }

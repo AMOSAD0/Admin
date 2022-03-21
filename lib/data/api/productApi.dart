@@ -8,6 +8,7 @@ List<product> products=[];
 productApi(this.products);
   
   getProudcts()async{
+
     await FirebaseFirestore.instance.collection('Products').get().then((value) {
      value.docs.forEach((element) { 
        product p = product.fromJson(element.data());
@@ -17,10 +18,10 @@ productApi(this.products);
         products.add(p);
      }
      );
-     
+     return products;
     }).catchError((onError){
       print(onError);
     });
-    return products;
+    
   }
 }

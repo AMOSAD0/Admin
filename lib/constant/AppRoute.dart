@@ -1,6 +1,7 @@
 import 'package:admin/constant/Screens.dart';
 import 'package:admin/presentation/module/AddProductScreen.dart';
 import 'package:admin/presentation/module/LogInScreen.dart';
+import 'package:admin/presentation/module/Products.dart';
 import 'package:admin/presentation/module/SplashScreen.dart';
 import 'package:flutter/material.dart';
 class AppRoute{
@@ -14,6 +15,8 @@ return MaterialPageRoute(builder: (_)=>SplashScreen(nextScreen: LogInScreen(),))
     return MaterialPageRoute(builder: (_)=>LogInScreen());
   case addProduct:
     return MaterialPageRoute(builder: (_)=>AddProductScreen());
+  case productpath:
+    return MaterialPageRoute(builder: (_)=>Products());
 }
 }
 }
