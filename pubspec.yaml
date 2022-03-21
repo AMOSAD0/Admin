@@ -38,6 +38,9 @@ dependencies:
   shared_preferences: ^2.0.13
   animated_splash_screen: ^1.2.0
   bloc:
+  flutter_bloc:
+  firebase_core:
+  cloud_firestore:
 
 dev_dependencies:
   flutter_test:
