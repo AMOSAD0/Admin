@@ -13,7 +13,10 @@ class ProductCubit extends Cubit<productStats>
 
  getAll(){
    productApi p= productApi(P_List);
-   p.getProudcts();
+   p.getProudcts().then((value){
+     P_List=value;
+     emit(Succes());
+   });
  //P_List=  p.getProudcts();
  /*.then((value){
      P_List=value;
