@@ -15,10 +15,12 @@ productApi(this.products);
     //p.Name=element.Name;
     //p.Price=element.Price;
         products.add(p);
-     });
+     }
+     );
+     return products;
     }).catchError((onError){
       print(onError);
     });
-    return products;
+    
   }
 }
