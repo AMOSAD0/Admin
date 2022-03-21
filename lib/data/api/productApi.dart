@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 class productApi{
-var Val;
+QuerySnapshot<Map<String,dynamic>>? Val;
   
   getProudcts()async{
     await FirebaseFirestore.instance.collection('Products').get().then((value) {
