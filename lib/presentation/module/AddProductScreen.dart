@@ -18,6 +18,7 @@ class AddProductScreen extends StatelessWidget {
            padding: const EdgeInsets.all(50.0),
            child: InkWell(
              onTap: (){
+               print(true);
              Navigator.pushNamed(context, productpath);
               // ProductCubit().getAll();
   //  print(ProductCubit.get(context).P_List);
