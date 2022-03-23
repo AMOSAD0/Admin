@@ -26,9 +26,8 @@ class AdminApp extends StatelessWidget {
     return  MultiBlocProvider(
 
       providers: [
-        BlocProvider(create:(context) => ProductCubit()..getAll()),
-      
-
+        BlocProvider(create:(context) => ProductCubit()),
+       // BlocProvider(create:(context) => ProductCubit()..addProduct()),
       ],
       child: Sizer(
         builder:(context, orientation, deviceType) =>  MaterialApp(

@@ -3,13 +3,13 @@ class product{
   String? Price;
   String? id;
 
-  product({this.Name,this.Price,this.id});
+  product({this.Name,this.Price,});
 
   toJson(){
     return{
       'Name':Name,
       'Price':Price,
-      'id':id,
+      
     };
   }
 

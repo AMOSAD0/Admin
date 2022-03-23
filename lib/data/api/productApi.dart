@@ -6,6 +6,7 @@ class productApi{
 //var Val;
 List<product> products=[];
 productApi(this.products);
+//product p =new product();
   
   getProudcts()async{
 
@@ -24,5 +25,15 @@ productApi(this.products);
       print(false);
     });
     return products;
+  }
+
+  addproduct()async{
+    product p =new product(Name: 'C',Price: '20');
+    await FirebaseFirestore.instance.collection('Products').add(p.toJson());
+  }
+
+  deleteproduct( p)async{
+    
+   await FirebaseFirestore.instance.collection('Products').doc(p).delete();
   }
 }

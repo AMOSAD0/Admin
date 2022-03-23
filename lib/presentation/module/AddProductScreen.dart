@@ -18,9 +18,10 @@ class AddProductScreen extends StatelessWidget {
            padding: const EdgeInsets.all(50.0),
            child: InkWell(
              onTap: (){
-               print(true);
+               
              Navigator.pushNamed(context, productpath);
-              // ProductCubit().getAll();
+             ProductCubit.get(context).P_List=[];
+             ProductCubit.get(context).getAll();
   //  print(ProductCubit.get(context).P_List);
             
              },
@@ -43,20 +44,25 @@ class AddProductScreen extends StatelessWidget {
          //======================================//
           Padding(
            padding: const EdgeInsets.all(50.0),
-           child: Container(
-            height: 20.h,
-            width: 85.w,
-            color: Colors.grey[400],
-            child:const Center(
-              child:  Text('Order',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color: Colors.black,
+           child: InkWell(
+             onTap: (){
+               
+             },
+             child: Container(
+              height: 20.h,
+              width: 85.w,
+              color: Colors.grey[400],
+              child:const Center(
+                child:  Text('Order',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                  color: Colors.black,
+                ),
+                ),
               ),
-              ),
-            ),
-        ),
+                   ),
+           ),
          ),
         ],
       ),

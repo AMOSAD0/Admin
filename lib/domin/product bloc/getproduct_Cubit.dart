@@ -10,6 +10,7 @@ class ProductCubit extends Cubit<productStats>
  ProductCubit():super(loading());
  static ProductCubit get(context)=>BlocProvider.of(context);
   List <product>P_List=[];
+  //product p =product();
 
  getAll(){
    emit(loading());
@@ -21,6 +22,22 @@ class ProductCubit extends Cubit<productStats>
  emit(Succes());
 
 
+ }
+
+ addProduct(){
+   emit(loading());
+   productApi p=productApi(P_List);
+   p.addproduct().then((value){
+     emit(Succes());
+   });
+ }
+
+ deleteProduct(p){
+   emit(loading());
+   productApi ap =productApi(P_List);
+   ap.deleteproduct(p).then((){
+     emit(Succes());
+   });
  }
 
 }
