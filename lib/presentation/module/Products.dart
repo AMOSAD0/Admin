@@ -11,7 +11,10 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductCubit,productStats>(
+    return BlocConsumer<ProductCubit,productStats>(
+      listener: (context, state) {
+        
+      },
        builder: (context, state) {
        
       return Scaffold(

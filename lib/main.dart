@@ -9,8 +9,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
-  await CashHelper.init();
   await Firebase.initializeApp();
+  await CashHelper.init();
+  
   BlocOverrides.runZoned(
           (){
     runApp(AdminApp());
@@ -23,8 +24,11 @@ class AdminApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MultiBlocProvider(
+
       providers: [
-        BlocProvider(create: (context) => ProductCubit()..getAll()),
+        BlocProvider(create:(context) => ProductCubit()..getAll()),
+      
+
       ],
       child: Sizer(
         builder:(context, orientation, deviceType) =>  MaterialApp(

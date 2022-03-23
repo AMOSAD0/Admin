@@ -9,7 +9,7 @@ productApi(this.products);
   
   getProudcts()async{
 
-    await FirebaseFirestore.instance.collection('Products').get().then((value) {
+    await FirebaseFirestore.instance.collection('Products').get().then((value){
      value.docs.forEach((element) { 
        product p = product.fromJson(element.data());
        p.id=element.id;
@@ -18,10 +18,11 @@ productApi(this.products);
         products.add(p);
      }
      );
-     return products;
+     
     }).catchError((onError){
       print(onError);
+      print(false);
     });
-    
+    return products;
   }
 }

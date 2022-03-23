@@ -6,3 +6,5 @@ class loading extends productStats{}
 class Succes extends productStats{}
 
 class Faile extends productStats{}
+
+class Getproduct extends productStats{}

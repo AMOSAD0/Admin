@@ -12,12 +12,13 @@ class ProductCubit extends Cubit<productStats>
   List <product>P_List=[];
 
  getAll(){
+   emit(loading());
    productApi p= productApi(P_List);
      p.getProudcts().then((value){
      P_List=value;
-     emit(Succes());
+     emit(Getproduct());
    });
- 
+ emit(Succes());
 
 
  }
