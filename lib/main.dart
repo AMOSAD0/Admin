@@ -27,6 +27,7 @@ class AdminApp extends StatelessWidget {
 
       providers: [
         BlocProvider(create:(context) => ProductCubit()),
+      
        // BlocProvider(create:(context) => ProductCubit()..addProduct()),
       ],
       child: Sizer(
