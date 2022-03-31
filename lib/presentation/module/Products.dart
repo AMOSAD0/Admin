@@ -48,7 +48,7 @@ class Products extends StatelessWidget {
                          onTap: () {
                            ProductCubit().deleteProduct(ProductCubit.get(context).P_List[index].id!);
                          //  ProductCubit.get(context).P_List.removeAt(index);
-                           
+                           //
                          },
                          child: CircleAvatar(
                            child: Icon(Icons.delete_forever),
