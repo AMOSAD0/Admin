@@ -24,7 +24,10 @@ class LogInScreen extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (_)=>AddProductScreen()));
                   },
-                  child: Btton(btn: 'LogIn',))
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20.0,right: 20),
+                    child: Btton(btn: 'LogIn',),
+                  ))
             ],
           ),
     );

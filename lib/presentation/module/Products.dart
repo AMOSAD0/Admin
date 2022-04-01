@@ -1,3 +1,4 @@
+import 'package:admin/constant/Screens.dart';
 import 'package:admin/data/model/product.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Cubit.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Stat.dart';
@@ -22,47 +23,63 @@ class Products extends StatelessWidget {
       return Scaffold(
         body: Column(
           children: [
-            InkWell(
-              onTap: () {
-                
-                ProductCubit().addProduct();
-                
-               // ProductCubit.get(context).getAll();
-              },
+
+            Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Container(
-                height: 20.h,
-                 width: 20.w,
-                 color: Colors.black,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)
+                ,color: Colors.grey[300]),
+                height: 70.h,
+                width: 100.w,
+                child: GridView.builder(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                itemCount: ProductCubit.get(context).P_List.length,
+                 itemBuilder:(context,index){
+                   return Padding(
+                     padding: const EdgeInsets.all(8.0),
+                     child: Container(
+                       height: 20.h,
+                       width: 20.w,
+                       color: Colors.blue,
+                       child: Column(
+                         children: [
+                           SizedBox(height: 5.h,),
+                           Text(ProductCubit.get(context).P_List[index].Name!),
+                           InkWell(
+                             onTap: () {
+                               print(list_p[index].id);
+
+                               ProductCubit().deleteProduct(list_p[index].id);//ProductCubit.get(context).P_List[index].id);
+                             //  ProductCubit.get(context).P_List.removeAt(index);
+                               //
+                             },
+                             child: Padding(
+                               padding: const EdgeInsets.only(top: 20.0),
+                               child: CircleAvatar(
+                                 child: Icon(Icons.delete_forever),
+                               ),
+                             ),
+                           )
+                         ],
+                       ),
+                     ),
+                   );
+                 } ),
               ),
             ),
-            Container(
-              height: 70.h,
-              width: 100.w,
-              child: GridView.builder(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-              itemCount: ProductCubit.get(context).P_List.length,
-               itemBuilder:(context,index){
-                 return Container(
-                   height: 20.h,
-                   width: 20.w,
-                   color: Colors.blue,
-                   child: Column(
-                     children: [
-                       Text(ProductCubit.get(context).P_List[index].Name!),
-                       InkWell(
-                         onTap: () {
-                           print(list_p[index].id);
-                           ProductCubit().deleteProduct(list_p[index].id);//ProductCubit.get(context).P_List[index].id);
-                         //  ProductCubit.get(context).P_List.removeAt(index);
-                           //
-                         },
-                         child: CircleAvatar(
-                           child: Icon(Icons.delete_forever),
-                         ),
-                       )
-                     ],
-                   ),
-                 );
-               } ),
+            SizedBox(height: 10.h,),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, add);
+            //    ProductCubit().addProduct();
+
+                // ProductCubit.get(context).getAll();
+              },
+              child: Container(
+                height: 6.h,
+                width: 55.w,
+                color: Colors.black,
+                child: Center(child: Text('Add',style: TextStyle(color: Colors.white,fontSize: 20.sp),)),
+              ),
             ),
           ],
         ),
