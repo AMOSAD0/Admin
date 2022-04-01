@@ -16,7 +16,9 @@ return ref.snapshots().map((event) {
   if(products.isNotEmpty){
     products.clear();
      for(var doc in event.docs){
+       
     final prod=product.fromJson(doc.data());
+    prod.id=doc.id;
     products.add(prod);
   }
   
@@ -24,6 +26,7 @@ return ref.snapshots().map((event) {
   else{
      for(var doc in event.docs){
     final prod=product.fromJson(doc.data());
+    prod.id=doc.id;
     products.add(prod);
   }}
  
@@ -60,8 +63,8 @@ return ref.snapshots().map((event) {
      
   }
 
-  deleteproduct( p)async{
+  deleteproduct(p)async{
     
-   await FirebaseFirestore.instance.collection('Products').doc(p).delete();
+   await FirebaseFirestore.instance.collection('Products').doc(p.toString()).delete();
   }
 }

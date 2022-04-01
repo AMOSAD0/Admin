@@ -50,7 +50,8 @@ class Products extends StatelessWidget {
                        Text(ProductCubit.get(context).P_List[index].Name!),
                        InkWell(
                          onTap: () {
-                           ProductCubit().deleteProduct(ProductCubit.get(context).P_List[index].id!);
+                           print(list_p[index].id);
+                           ProductCubit().deleteProduct(list_p[index].id);//ProductCubit.get(context).P_List[index].id);
                          //  ProductCubit.get(context).P_List.removeAt(index);
                            //
                          },
