@@ -1,4 +1,5 @@
 import 'package:admin/data/model/product.dart';
+import 'package:admin/presentation/module/Products.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -6,9 +7,31 @@ class productApi{
 //var Val;
 List<product> products=[];
 productApi(this.products);
-//product p =new product();
+product p =new product();
+
+Stream<List<product>>getProudcts(){
+final ref=FirebaseFirestore.instance.collection('Products');
+return ref.snapshots().map((event) {
+  final proudcts=<product>[];
+  if(products.isNotEmpty){
+    products.clear();
+     for(var doc in event.docs){
+    final prod=product.fromJson(doc.data());
+    products.add(prod);
+  }
   
-  getProudcts()async{
+  }
+  else{
+     for(var doc in event.docs){
+    final prod=product.fromJson(doc.data());
+    products.add(prod);
+  }}
+ 
+  return proudcts;
+});
+}
+  
+ /* getProudcts()async{
 
     await FirebaseFirestore.instance.collection('Products').get().then((value){
      value.docs.forEach((element) { 
@@ -26,10 +49,15 @@ productApi(this.products);
     });
     return products;
   }
-
-  addproduct()async{
+*/
+   addproduct(){
     product p =new product(Name: 'C',Price: '20');
-    await FirebaseFirestore.instance.collection('Products').add(p.toJson());
+    FirebaseFirestore.instance.collection('Products').add(p.toJson());
+    
+   
+    //product p =new product(Name: 'C',Price: '20');
+     //FirebaseFirestore.instance.collection('Products').add(p.toJson());
+     
   }
 
   deleteproduct( p)async{

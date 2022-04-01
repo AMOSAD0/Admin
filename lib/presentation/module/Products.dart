@@ -7,10 +7,12 @@ import 'package:sizer/sizer.dart';
 
 
 class Products extends StatelessWidget {
-  const Products({ Key? key }) : super(key: key);
+   Products({ Key? key }) : super(key: key);
 
   @override
+  
   Widget build(BuildContext context) {
+    List<product>list_p=ProductCubit.get(context).P_List;
     return BlocConsumer<ProductCubit,productStats>(
       listener: (context, state) {
         
@@ -22,7 +24,9 @@ class Products extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
+                
                 ProductCubit().addProduct();
+                
                // ProductCubit.get(context).getAll();
               },
               child: Container(

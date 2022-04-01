@@ -20,8 +20,8 @@ class AddProductScreen extends StatelessWidget {
              onTap: (){
                
              Navigator.pushNamed(context, productpath);
-             ProductCubit.get(context).P_List=[];
-             ProductCubit.get(context).getAll();
+           //  ProductCubit.get(context).P_List=[];
+             //ProductCubit.get(context).getAll();
   //  print(ProductCubit.get(context).P_List);
             
              },
