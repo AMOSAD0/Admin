@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductCubit extends Cubit<productStats>
 {
+  
   late StreamSubscription<List<product>> subscription;
  ProductCubit():super(loading()){
    subscription=productApi(P_List).getProudcts().listen((Products) { 
@@ -37,10 +38,10 @@ emit(Succes());
  emit(Succes());
  }
 */
- addProduct(){
+ addProduct(name,price){
    emit(loading());
    productApi p=productApi(P_List);
-   p.addproduct();/*.then((value){
+   p.addproduct(name,price);/*.then((value){
      emit(Succes());
    });*/
  }

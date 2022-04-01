@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 class productApi{
 //var Val;
+
 List<product> products=[];
 productApi(this.products);
 product p =new product();
@@ -53,8 +54,8 @@ return ref.snapshots().map((event) {
     return products;
   }
 */
-   addproduct(){
-    product p =new product(Name: 'C',Price: '20');
+   addproduct(name,price){
+    product p =new product(Name: name,Price: price);
     FirebaseFirestore.instance.collection('Products').add(p.toJson());
     
    

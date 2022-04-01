@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 class AddProd extends StatelessWidget {
    AddProd({Key? key}) : super(key: key);
-var cont=TextEditingController();
+var cont1=TextEditingController();
+var cont2=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,13 +14,13 @@ var cont=TextEditingController();
           height: 60.h,
           width: 90.w,
           child: ListView(children: [
-                TextField1(name: 'Name',controller: cont,secure: false,hint: 'name',type: TextInputType.name),
-            TextField1(name: 'price',controller: cont,secure: false,hint: 'price',type: TextInputType.name),
+                TextField1(name: 'Name',controller: cont1,secure: false,hint: 'name',type: TextInputType.name),
+            TextField1(name: 'price',controller: cont2,secure: false,hint: 'price',type: TextInputType.number),
             SizedBox(height: 3.h,),
             InkWell(
               onTap: () {
 
-                  ProductCubit().addProduct();
+                  ProductCubit().addProduct(cont1.text,cont2.text);
 
                 // ProductCubit.get(context).getAll();
               },
