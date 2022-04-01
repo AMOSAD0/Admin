@@ -3,8 +3,11 @@ abstract class productStats{
 }
 class loading extends productStats{}
 
-class Succes extends productStats{}
+class SuccesAdd extends productStats{}
 
-class Faile extends productStats{}
+class FaileAdd extends productStats{}
 
-class Getproduct extends productStats{}
+class GetproductSuccess extends productStats{}
+class GetproductFailed extends productStats{}
+class DeleteSuccess extends productStats{}
+class DeletFailed extends productStats{}

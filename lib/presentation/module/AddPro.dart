@@ -11,6 +11,7 @@ var cont2=TextEditingController();
     return Scaffold(
       body: Center(
         child: Container(
+          color: Colors.grey[100],
           height: 60.h,
           width: 90.w,
           child: ListView(children: [
