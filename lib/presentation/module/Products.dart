@@ -1,7 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:admin/constant/Screens.dart';
 import 'package:admin/data/model/product.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Cubit.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Stat.dart';
+import 'package:admin/presentation/module/Edit_Product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -44,21 +47,35 @@ class Products extends StatelessWidget {
                          children: [
                            SizedBox(height: 5.h,),
                            Text(ProductCubit.get(context).P_List[index].Name!),
-                           InkWell(
-                             onTap: () {
-                               print(list_p[index].id);
-
-                               ProductCubit().deleteProduct(list_p[index].id);//ProductCubit.get(context).P_List[index].id);
-                             //  ProductCubit.get(context).P_List.removeAt(index);
-                               //
-                             },
-                             child: Padding(
-                               padding: const EdgeInsets.only(top: 20.0),
+                           Padding(
+                             padding: const EdgeInsets.only(top: 30.0),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceAround,
+                               children: [
+                                        InkWell(
+                               onTap: () {
+                                 ProductCubit().deleteProduct(list_p[index].id);//ProductCubit.get(context).P_List[index].id);
+                               //  ProductCubit.get(context).P_List.removeAt(index);
+                                 //
+                               },
                                child: CircleAvatar(
                                  child: Icon(Icons.delete_forever),
                                ),
                              ),
-                           )
+
+                              InkWell(
+                               onTap: () {
+                                 Navigator.pushNamed(context, edit);
+                                // ProductCubit().edit_Product(list_p[index].id, product(Name: 'Ahmed',Price: '50'));
+                               },
+                               child: CircleAvatar(
+                                 child: Icon(Icons.edit),
+                               ),
+                             ),
+                               ],
+                             ),
+                           ),
+                            
                          ],
                        ),
                      ),

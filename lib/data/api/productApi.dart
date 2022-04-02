@@ -68,4 +68,9 @@ return ref.snapshots().map((event) {
     
    await FirebaseFirestore.instance.collection('Products').doc(p.toString()).delete();
   }
+
+  editproduct(p,product data)async{
+    await FirebaseFirestore.instance.collection('Products').doc(p).update(data.toJson());
+
+  }
 }

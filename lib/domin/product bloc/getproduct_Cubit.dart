@@ -14,9 +14,9 @@ class ProductCubit extends Cubit<productStats>
   late StreamSubscription<List<product>> subscription;
  ProductCubit():super(loading()){
    subscription=productApi(P_List).getProudcts().listen((Products) { 
-emit(GetproductSuccess());
+emit(Succes());
    })..onError((e){
-     emit(GetproductFailed());
+     emit(Faile()); 
    });
  }
  @override
@@ -41,18 +41,25 @@ emit(GetproductSuccess());
  addProduct(name,price){
    emit(loading());
    productApi p=productApi(P_List);
-   p.addproduct(name,price);
-   emit(SuccesAdd());/*.then((value){
+   p.addproduct(name,price);/*.then((value){
      emit(Succes());
    });*/
  }
 
- deleteProduct(p){
+ deleteProduct(p)async{
    emit(loading());
    productApi ap =productApi(P_List);
-   ap.deleteproduct(p).then((){
-     emit(DeleteSuccess());
+  await ap.deleteproduct(p).then((n){
+      emit(Succes());
    });
  }
+
+edit_Product(id,data)async{
+  emit(loading());
+   productApi ap =productApi(P_List);
+   await ap.editproduct(id, data).then((n){
+     emit(Succes());
+   });
+}
 
 }
