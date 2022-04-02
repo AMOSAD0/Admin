@@ -1,4 +1,4 @@
-import 'package:admin/presentation/module/AddProductScreen.dart';
+import 'package:admin/presentation/module/Home.dart';
 import 'package:admin/presentation/widget/Button.dart';
 import 'package:admin/presentation/widget/TextField.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class LogInScreen extends StatelessWidget {
               TextField1(type:TextInputType.visiblePassword,name: 'Pass',secure: true,hint: 'Password',controller:controller2,),
               InkWell(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>AddProductScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>Home()));
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20.0,right: 20),

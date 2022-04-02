@@ -46,12 +46,20 @@ emit(Succes());
    });*/
  }
 
- deleteProduct(p){
+ deleteProduct(p)async{
    emit(loading());
    productApi ap =productApi(P_List);
-   ap.deleteproduct(p).then((){
-     emit(Succes());
+  await ap.deleteproduct(p).then((n){
+      emit(Succes());
    });
  }
+
+edit_Product(id,data)async{
+  emit(loading());
+   productApi ap =productApi(P_List);
+   await ap.editproduct(id, data).then((n){
+     emit(Succes());
+   });
+}
 
 }

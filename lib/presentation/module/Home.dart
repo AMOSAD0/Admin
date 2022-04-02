@@ -5,10 +5,9 @@ import 'package:admin/domin/product%20bloc/getproduct_Stat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
-class AddProductScreen extends StatelessWidget {
-   AddProductScreen({Key? key}) : super(key: key);
-  List p =[];
-
+class Home extends StatelessWidget {
+   Home({Key? key}) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(  body: Column(
