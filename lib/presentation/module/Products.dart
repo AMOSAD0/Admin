@@ -65,7 +65,12 @@ class Products extends StatelessWidget {
 
                               InkWell(
                                onTap: () {
-                                 Navigator.pushNamed(context, edit);
+                                 
+                                 Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Edit_product_Screen(
+                                   id: list_p[index].id,
+                                   name: list_p[index].Name,
+                                   price: list_p[index].Price,
+                                 )));
                                 // ProductCubit().edit_Product(list_p[index].id, product(Name: 'Ahmed',Price: '50'));
                                },
                                child: CircleAvatar(
