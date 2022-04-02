@@ -2,6 +2,8 @@ import 'package:admin/domin/product%20bloc/getproduct_Cubit.dart';
 import 'package:admin/presentation/widget/TextField.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../constant/Screens.dart';
 class AddProd extends StatelessWidget {
    AddProd({Key? key}) : super(key: key);
 var cont1=TextEditingController();
@@ -22,7 +24,7 @@ var cont2=TextEditingController();
               onTap: () {
 
                   ProductCubit().addProduct(cont1.text,cont2.text);
-
+                  Navigator.pushNamed(context, productpath);
                 // ProductCubit.get(context).getAll();
               },
               child: Container(

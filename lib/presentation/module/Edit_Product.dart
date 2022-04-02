@@ -1,8 +1,11 @@
 import 'package:admin/data/model/product.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Cubit.dart';
+import 'package:admin/presentation/module/Products.dart';
 import 'package:admin/presentation/widget/TextField.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../constant/Screens.dart';
 class Edit_product_Screen extends StatelessWidget {
  var id;
  var name;
@@ -29,7 +32,7 @@ var cont2=TextEditingController();
               onTap: () {
 
                   ProductCubit().edit_Product(id, product(Name: cont1.text,Price: cont2.text));
-
+Navigator.pushNamed(context, productpath);
                 // ProductCubit.get(context).getAll();
               },
               child: Container(

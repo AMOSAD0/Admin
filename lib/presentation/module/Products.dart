@@ -24,9 +24,9 @@ class Products extends StatelessWidget {
        builder: (context, state) {
        
       return Scaffold(
-        body: Column(
+        body: ListView(
           children: [
-
+SizedBox(height: 5.h,),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Container(
@@ -38,7 +38,7 @@ class Products extends StatelessWidget {
                 itemCount: ProductCubit.get(context).P_List.length,
                  itemBuilder:(context,index){
                    return Padding(
-                     padding: const EdgeInsets.all(8.0),
+                     padding: const EdgeInsets.all(15.0),
                      child: Container(
                        height: 20.h,
                        width: 20.w,
@@ -96,11 +96,14 @@ class Products extends StatelessWidget {
 
                 // ProductCubit.get(context).getAll();
               },
-              child: Container(
-                height: 6.h,
-                width: 55.w,
-                color: Colors.black,
-                child: Center(child: Text('Add',style: TextStyle(color: Colors.white,fontSize: 20.sp),)),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30.0,right: 30,bottom: 30),
+                child: Container(
+                  height: 6.h,
+                  width: 55.w,
+                  color: Colors.black,
+                  child: Center(child: Text('Add',style: TextStyle(color: Colors.white,fontSize: 20.sp),)),
+                ),
               ),
             ),
           ],

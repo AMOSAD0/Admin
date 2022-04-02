@@ -11,3 +11,4 @@ class GetproductSuccess extends productStats{}
 class GetproductFailed extends productStats{}
 class DeleteSuccess extends productStats{}
 class DeletFailed extends productStats{}
+class EditSuccess extends productStats{}
