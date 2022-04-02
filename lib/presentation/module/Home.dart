@@ -2,6 +2,7 @@ import 'package:admin/constant/Screens.dart';
 import 'package:admin/data/api/productApi.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Cubit.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Stat.dart';
+import 'package:admin/presentation/module/Edit_Product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
