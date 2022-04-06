@@ -20,7 +20,7 @@ class Orders extends StatelessWidget {
                 itemBuilder: (context,index)=>Container(
                   height: 10.h,width: 10.w,
                   color: Colors.blue,
-                  child: Text(OrderCubit.get(context).o_list[index].Name!),
+                  child: Text('h')//OrderCubit.get(context).o_list[index].Name!),
                 )
             )
           ),

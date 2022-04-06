@@ -7,10 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OrderCubit extends Cubit<OrderStates>{
   static OrderCubit get(context)=>BlocProvider.of(context);
-  List <product>o_list=[];
-  late StreamSubscription<List<product>>subscription;
+  List o_list=[];
+  late StreamSubscription<List>subscription;
   OrderCubit() : super(GetOrderLoading()){
-    subscription=OrderApi().getOrder().listen((orders) {
+    subscription=OrderApi(o_list).getOrder().listen((orders) {
       emit(GetOrderSuccess(orders));
     })..onError((e){
       emit(GetOrderFailed(e));
