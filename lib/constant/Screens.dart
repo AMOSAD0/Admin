@@ -6,3 +6,4 @@ const addProduct='/product';
 const productpath='/p';
 const add='/add';
 const edit='/edit';
+const order='/order';

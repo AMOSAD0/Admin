@@ -43,7 +43,8 @@ SizedBox(height: 5.h,),
                        height: 20.h,
                        width: 20.w,
                        color: Colors.blue,
-                       child: Column(
+                       child:
+                       Column(
                          children: [
                            SizedBox(height: 5.h,),
                            Text(ProductCubit.get(context).P_List[index].Name!),
@@ -62,10 +63,8 @@ SizedBox(height: 5.h,),
                                  child: Icon(Icons.delete_forever),
                                ),
                              ),
-
                               InkWell(
                                onTap: () {
-                                 
                                  Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Edit_product_Screen(
                                    id: list_p[index].id,
                                    name: list_p[index].Name,
@@ -80,7 +79,7 @@ SizedBox(height: 5.h,),
                                ],
                              ),
                            ),
-                            
+
                          ],
                        ),
                      ),
@@ -91,7 +90,7 @@ SizedBox(height: 5.h,),
             SizedBox(height: 10.h,),
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, add);
+                Navigator.popAndPushNamed(context, add);
             //    ProductCubit().addProduct();
 
                 // ProductCubit.get(context).getAll();

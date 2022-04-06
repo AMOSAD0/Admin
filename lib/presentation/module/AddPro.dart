@@ -24,7 +24,7 @@ var cont2=TextEditingController();
               onTap: () {
 
                   ProductCubit().addProduct(cont1.text,cont2.text);
-                  Navigator.pushNamed(context, productpath);
+                  Navigator.popAndPushNamed(context, productpath);
                 // ProductCubit.get(context).getAll();
               },
               child: Container(

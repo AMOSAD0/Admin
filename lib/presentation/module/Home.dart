@@ -46,7 +46,7 @@ class Home extends StatelessWidget {
            padding: const EdgeInsets.all(50.0),
            child: InkWell(
              onTap: (){
-               
+               Navigator.pushNamed(context, order);
              },
              child: Container(
               height: 20.h,

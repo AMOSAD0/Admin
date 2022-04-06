@@ -3,6 +3,7 @@ import 'package:admin/presentation/module/AddPro.dart';
 import 'package:admin/presentation/module/Edit_Product.dart';
 import 'package:admin/presentation/module/Home.dart';
 import 'package:admin/presentation/module/LogInScreen.dart';
+import 'package:admin/presentation/module/Orders.dart';
 import 'package:admin/presentation/module/Products.dart';
 import 'package:admin/presentation/module/SplashScreen.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,9 @@ return MaterialPageRoute(builder: (_)=>SplashScreen(nextScreen: LogInScreen(),))
     return MaterialPageRoute(builder: (_)=>AddProd());
   case edit:
     return MaterialPageRoute(builder: (_)=>Edit_product_Screen());
+
+  case order:
+    return MaterialPageRoute(builder: (_)=>Orders());
 }
 }
 }

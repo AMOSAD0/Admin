@@ -9,7 +9,6 @@ class productApi{
 List<product> products=[];
 productApi(this.products);
 product p =new product();
-
 Stream<List<product>>getProudcts(){
 final ref=FirebaseFirestore.instance.collection('Products');
 return ref.snapshots().map((event) {
@@ -17,12 +16,10 @@ return ref.snapshots().map((event) {
   if(products.isNotEmpty){
     products.clear();
      for(var doc in event.docs){
-       
     final prod=product.fromJson(doc.data());
     prod.id=doc.id;
     products.add(prod);
   }
-  
   }
   else{
      for(var doc in event.docs){
@@ -30,7 +27,6 @@ return ref.snapshots().map((event) {
     prod.id=doc.id;
     products.add(prod);
   }}
- 
   return proudcts;
 });
 }
@@ -71,6 +67,5 @@ return ref.snapshots().map((event) {
 
   editproduct(p,product data)async{
     await FirebaseFirestore.instance.collection('Products').doc(p).update(data.toJson());
-
   }
 }

@@ -32,7 +32,7 @@ var cont2=TextEditingController();
               onTap: () {
 
                   ProductCubit().edit_Product(id, product(Name: cont1.text,Price: cont2.text));
-Navigator.pushNamed(context, productpath);
+Navigator.popAndPushNamed(context, productpath);
                 // ProductCubit.get(context).getAll();
               },
               child: Container(
@@ -42,7 +42,6 @@ Navigator.pushNamed(context, productpath);
                 child: Center(child: Text('Updata',style: TextStyle(color: Colors.white,fontSize: 20.sp),)),
               ),
             ),
-
               ],),
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:admin/constant/AppRoute.dart';
 import 'package:admin/constant/blocObserver.dart';
 import 'package:admin/data/localData/cashHelper.dart';
+import 'package:admin/domin/order_cubit/orderCubit.dart';
 import 'package:admin/domin/product%20bloc/getproduct_Cubit.dart';
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -27,7 +28,7 @@ class AdminApp extends StatelessWidget {
 
       providers: [
         BlocProvider(create:(context) => ProductCubit()),
-      
+        BlocProvider(create:(context) => OrderCubit()),
        // BlocProvider(create:(context) => ProductCubit()..addProduct()),
       ],
       child: Sizer(
