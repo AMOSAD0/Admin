@@ -8,7 +8,7 @@ class Orders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print( OrderCubit.get(context).o_list);
+   // print( OrderCubit.get(context).o_list);
     return BlocConsumer<OrderCubit,OrderStates>(
 
       listener: (context,state){},
@@ -18,11 +18,11 @@ class Orders extends StatelessWidget {
             height: 70.h,width: 90.w,
             child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-                itemCount: OrderCubit.get(context).o_list.length,
+                itemCount:OrderCubit.get(context).o_list.length,
                 itemBuilder: (context,index)=>Container(
                   height: 10.h,width: 10.w,
                   color: Colors.blue,
-                  child: Text('h')//OrderCubit.get(context).o_list[index].Name!),
+                  child: Text(OrderCubit.get(context).o_list['Oerder 1'][1])//OrderCubit.get(context).o_list[index].Name!),
                 )
             )
           ),

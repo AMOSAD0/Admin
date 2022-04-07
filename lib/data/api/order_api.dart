@@ -9,8 +9,9 @@ class OrderApi{
     final ref=FirebaseFirestore.instance.collection('Orders');
     return ref.snapshots().map((event){
       final orders={};
+      int i=1;
       for(var doc in event.docs){
-        int i=1;
+        
         final order=Order.fromJson(doc.data());
         ordemrs['Oerder $i']=order.listOfName;
         i++;
