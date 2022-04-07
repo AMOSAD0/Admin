@@ -8,7 +8,9 @@ class Orders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print( OrderCubit.get(context).o_list);
     return BlocConsumer<OrderCubit,OrderStates>(
+
       listener: (context,state){},
       builder:(context, state) =>  Scaffold(
         body: Center(

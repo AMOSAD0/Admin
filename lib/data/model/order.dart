@@ -1,11 +1,14 @@
 import 'dart:convert';
 
 import 'package:admin/data/model/product.dart';
+import 'package:flutter/cupertino.dart';
 
 class Order{
-
-  Map <String,String>maptOfNames=new Map();
-  List  listOfName=[]; 
+  List  listOfName=[];
+ //Map <String,String>maptOfNames=new Map();
+/*
+ ;
+   
 
 convrt(List<product> list){
   int i=1;
@@ -15,13 +18,13 @@ convrt(List<product> list){
     //print(maptOfNames);
   }
   return maptOfNames;
-}
+}*/
 
 Order.fromJson(Map<String, dynamic> json){
-  for(int i =1;i<=json.length;i++){
-listOfName[i]=json['Name $i'];
-  }
-   
+  listOfName=json.values.toList();
+ 
+//return listOfName;
+  
 }
 
 /*tojson(){
