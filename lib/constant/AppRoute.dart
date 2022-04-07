@@ -6,6 +6,7 @@ import 'package:admin/presentation/module/LogInScreen.dart';
 import 'package:admin/presentation/module/Orders.dart';
 import 'package:admin/presentation/module/Products.dart';
 import 'package:admin/presentation/module/SplashScreen.dart';
+import 'package:admin/presentation/module/orderinfo.dart';
 import 'package:flutter/material.dart';
 class AppRoute{
 Route?onGenerateRoute(RouteSettings routeSettings){
@@ -27,6 +28,7 @@ return MaterialPageRoute(builder: (_)=>SplashScreen(nextScreen: LogInScreen(),))
 
   case order:
     return MaterialPageRoute(builder: (_)=>Orders());
+
 }
 }
 }
